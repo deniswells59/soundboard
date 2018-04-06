@@ -1,14 +1,42 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React, { Component } from 'react'
 
-import Header from '../components/Header'
-import SoundBoard from '../components/SoundBoard'
+import Header from '../components/Header';
+import SoundBoard from '../components/SoundBoard';
+import Loader from '../components/Loader';
 
-const IndexPage = () => (
-  <div>
-    <Header />
-    <SoundBoard />
-  </div>
-)
+import loadEverything from '../utils/loadEverything';
+
+class IndexPage extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      loading: false,
+    };
+  }
+
+  componentDidMount() {
+    loadEverything();
+  }
+
+  renderPage = () => (
+    <div>
+      <Header />
+      <SoundBoard />
+    </div>
+  )
+
+  render() {
+    return (
+      <div>
+        {
+          this.state.loading ?
+            <Loader /> :
+            this.renderPage()
+        }
+      </div>
+    );
+  }
+}
 
 export default IndexPage

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const SoundByte = ({ title, file, play }) => (
-  <div>
+  <div className="col-xs-12 col-sm-6 col-lg-4">
     <button
       onClick={() => play(file)}
       style={{
@@ -13,6 +13,7 @@ const SoundByte = ({ title, file, play }) => (
         textTransform: 'uppercase',
         minHeight: '48px',
         backgroundColor: '#ffffff96',
+        color: 'rgba(0,0,0,.87)',
       }}
     >{title}</button>
   </div>

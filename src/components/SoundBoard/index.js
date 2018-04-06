@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SoundByte from '../SoundByte';
-import sounds from './sounds';
+import sounds from '../../sounds';
 
 class SoundBoard extends Component {
 
