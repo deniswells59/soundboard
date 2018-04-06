@@ -14,7 +14,9 @@ class SoundBoard extends Component {
     return (
       <div>
         <audio ref={(node => this.player = node)}></audio>
-        {sounds.map(sound => <SoundByte play={this.play.bind(this)} {...sound} />)}
+        {sounds.map((sound, key) => (
+          <SoundByte key={key} play={this.play.bind(this)} {...sound} />)
+        )}
       </div>
     );
   }
